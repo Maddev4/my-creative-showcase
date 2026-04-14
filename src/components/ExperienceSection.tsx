@@ -10,11 +10,11 @@ const experiences = [
     color: "from-violet to-indigo",
     dotColor: "bg-violet",
     bullets: [
-      "Led mobile and full-stack delivery — Flutter apps, React (TypeScript) web, and integrations end-to-end",
-      "Owned coaching workflows, dashboards, notifications, and API-backed experiences",
-      "Built real-time engagement tracking using Socket.io and Firebase",
-      "Improved onboarding conversion by 35% through UX and performance optimization",
-      "Introduced AI-assisted workflows, increasing delivery speed by ~2×",
+      "Led mobile + full-stack delivery across Flutter and React (TypeScript), coordinating feature work from UX to APIs and release",
+      "Shipped CRM-like coaching workflows: lead/client intake, segmentation, dashboards, and automated follow-ups",
+      "Built webhook-style integrations and event-driven notifications for onboarding and lifecycle messaging",
+      "Delivered real-time engagement tracking (Socket.io) for coach/client experiences and operational dashboards",
+      "Integrated AI-enabled workflows for summarization and content generation, improving operator throughput and response time",
     ],
   },
   {
@@ -25,10 +25,10 @@ const experiences = [
     color: "from-cyan to-brand-blue",
     dotColor: "bg-cyan",
     bullets: [
-      "Led mobile full-stack dev: Flutter client apps + React + Ant Design admin dashboards",
-      "Delivered scalable health experiences with Firebase, social login, and secure data flows",
+      "Led mobile full-stack dev: Flutter client apps + React + Ant Design admin dashboards, shipped as multi-tenant SaaS features",
+      "Implemented role-based access patterns and secure data flows aligned with healthcare-adjacent privacy requirements",
       "Led migration from legacy stack to Flutter, reducing maintenance cost by 40%",
-      "Built subscription flows, Stripe payment UI, and billing integrations",
+      "Built subscription flows: Stripe checkout, billing lifecycle, and webhook-driven entitlement provisioning",
     ],
   },
   {
@@ -39,9 +39,9 @@ const experiences = [
     color: "from-emerald to-teal",
     dotColor: "bg-emerald",
     bullets: [
-      "Built modern web applications using React, TypeScript, and Styled-components",
-      "Implemented real-time features and dashboards using Recharts and WebSockets",
-      "Contributed to frontend architecture and reusable component systems",
+      "Built production web apps using React + TypeScript with reusable component systems and scalable frontend architecture",
+      "Implemented dashboards, reporting views, and real-time features (WebSockets) with attention to performance and reliability",
+      "Delivered integration-heavy features (REST APIs, auth flows, background jobs) in SaaS and health-tech contexts",
     ],
   },
   {
@@ -53,11 +53,12 @@ const experiences = [
     dotColor: "bg-amber",
     bullets: [
       "Developed web apps using JavaScript, React, and REST APIs",
-      "Built foundations in scalable frontend architecture and clean coding practices",
+      "Built foundations in scalable frontend patterns, API consumption, and clean coding practices",
     ],
   },
 ];
 
+/** Work experience timeline with impact-focused bullets. */
 const ExperienceSection = () => (
   <section id="experience" className="section-padding bg-secondary/50 relative overflow-hidden">
     <div className="absolute top-[20%] left-0 w-[400px] h-[400px] rounded-full bg-rose/4 blur-[100px] pointer-events-none" />
@@ -77,7 +78,7 @@ const ExperienceSection = () => (
           Work <span className="text-gradient-warm">Experience</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          7+ years shipping web and mobile products for HealthTech and SaaS.
+          7+ years shipping web and mobile products for SaaS and HealthTech — integrations, billing, real-time workflows, and AI-enabled features.
         </p>
       </motion.div>
 

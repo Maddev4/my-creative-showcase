@@ -18,6 +18,7 @@ const techTags = [
   { name: "PostgreSQL", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
   { name: "Stripe", color: "bg-violet/15 text-violet border-violet/25" },
   { name: "Socket.io", color: "bg-rose/15 text-rose border-rose/25" },
+  { name: "AWS", color: "bg-amber/15 text-amber border-amber/25" },
 ];
 
 const container = {
@@ -32,6 +33,7 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
+/** Hero headline + positioning for healthcare SaaS and AI-enabled platforms. */
 const HeroSection = () => (
   <section className="relative min-h-screen bg-aurora flex items-center overflow-hidden">
     {/* Floating gradient orbs */}
@@ -73,7 +75,7 @@ const HeroSection = () => (
         >
           <span className="text-primary-foreground">Senior</span>
           <br />
-          <span className="text-gradient">Full-Stack</span>
+          <span className="text-gradient">AI & Full-Stack</span>
           <br />
           <span className="text-primary-foreground">Engineer</span>
         </motion.h1>
@@ -148,7 +150,7 @@ const HeroSection = () => (
 
           <div className="flex items-center gap-2 mt-4 bg-violet/10 border border-violet/20 text-violet text-xs font-semibold px-4 py-2 rounded-full">
             <Shield size={12} />
-            HIPAA Certified (CHP) · 2028
+            HIPAA-aware engineering · PHI-safe patterns
           </div>
         </div>
       </motion.div>

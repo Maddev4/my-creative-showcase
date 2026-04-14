@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { icon: "⚛️", name: "React / Next.js", level: "TypeScript, Ant Design, MUI", gradient: "from-brand-blue/20 to-violet/20", border: "hover:border-brand-blue/40" },
-  { icon: "📱", name: "React Native / Flutter", level: "Dart, GetX, Firebase, social auth", gradient: "from-cyan/20 to-brand-blue/20", border: "hover:border-cyan/40" },
-  { icon: "🟢", name: "Node.js / NestJS", level: "REST APIs, scalable backends", gradient: "from-emerald/20 to-teal/20", border: "hover:border-emerald/40" },
-  { icon: "🔥", name: "Firebase", level: "Auth, Firestore, FCM, Storage", gradient: "from-amber/20 to-coral/20", border: "hover:border-amber/40" },
-  { icon: "⚡", name: "Real-time", level: "WebSockets, Socket.io, live data", gradient: "from-violet/20 to-rose/20", border: "hover:border-violet/40" },
-  { icon: "📊", name: "Data Viz", level: "Recharts, analytics UX", gradient: "from-indigo/20 to-cyan/20", border: "hover:border-indigo/40" },
-  { icon: "🗄️", name: "Data Layer", level: "PostgreSQL, Supabase", gradient: "from-brand-blue/20 to-indigo/20", border: "hover:border-brand-blue/40" },
-  { icon: "💳", name: "Payments", level: "Stripe subscriptions & billing", gradient: "from-violet/20 to-pink/20", border: "hover:border-violet/40" },
-  { icon: "🤖", name: "AI Workflows", level: "GPT, Claude, Codex pipelines", gradient: "from-rose/20 to-amber/20", border: "hover:border-rose/40" },
-  { icon: "🚀", name: "Delivery", level: "CI/CD, Agile, code review", gradient: "from-emerald/20 to-cyan/20", border: "hover:border-emerald/40" },
+  { icon: "🧠", name: "LLM Integration", level: "GPT-4/GPT-5, Claude, LLaMA 3, Gemini, Mistral · RAG", gradient: "from-rose/20 to-amber/20", border: "hover:border-rose/40" },
+  { icon: "🕸️", name: "Multi-Agent Systems", level: "LangChain, LangGraph, CrewAI, AutoGen", gradient: "from-violet/20 to-indigo/20", border: "hover:border-violet/40" },
+  { icon: "🎙️", name: "AI Voice Agents", level: "Sales/support/IVR · VAPI, Retell, Bland, hume.ai", gradient: "from-cyan/20 to-emerald/20", border: "hover:border-cyan/40" },
+  { icon: "🗣️", name: "Speech Tech (STT/TTS)", level: "Real-time voice processing · ElevenLabs voice cloning", gradient: "from-amber/20 to-coral/20", border: "hover:border-amber/40" },
+  { icon: "🧬", name: "Vector Databases", level: "Pinecone, Weaviate, Qdrant, ChromaDB", gradient: "from-indigo/20 to-cyan/20", border: "hover:border-indigo/40" },
+  { icon: "🧱", name: "Backend", level: "Python (Django/Flask/FastAPI) · Node (Express/NestJS) · Java (Spring Boot)", gradient: "from-emerald/20 to-teal/20", border: "hover:border-emerald/40" },
+  { icon: "📞", name: "Twilio Services", level: "Voice, SMS, WhatsApp · Studio Flows · Programmable Messaging", gradient: "from-brand-blue/20 to-violet/20", border: "hover:border-brand-blue/40" },
+  { icon: "🗂️", name: "CRM Platforms", level: "Salesforce, HubSpot, Zoho, Pipedrive, Airtable · Custom CRMs", gradient: "from-brand-blue/20 to-indigo/20", border: "hover:border-brand-blue/40" },
+  { icon: "⚙️", name: "Automation Tools", level: "n8n, Zapier, Make.com, Power Automate", gradient: "from-emerald/20 to-cyan/20", border: "hover:border-emerald/40" },
+  { icon: "🔌", name: "Integrations & Webhooks", level: "Google Calendar, Zoom, Slack, Notion · Calendly/Cal.com · event-driven sync/ETL", gradient: "from-violet/20 to-pink/20", border: "hover:border-violet/40" },
+  { icon: "💳", name: "Payments", level: "Stripe, PayPal", gradient: "from-indigo/20 to-rose/20", border: "hover:border-indigo/40" },
 ];
 
+/** Core skills snapshot, optimized for SaaS/HealthTech roles. */
 const SkillsSection = () => (
   <section id="skills" className="section-padding relative overflow-hidden">
     {/* Subtle background accent */}
@@ -34,7 +36,7 @@ const SkillsSection = () => (
           Skills & <span className="text-gradient">Technologies</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          Frontend, mobile, backend, real-time systems, and AI-assisted delivery—aligned with production SaaS and HealthTech platforms.
+          Full‑stack delivery for SaaS and HealthTech: modular frontends, API/webhook integrations, AWS deployment patterns, and AI-enabled workflows.
         </p>
       </motion.div>
 

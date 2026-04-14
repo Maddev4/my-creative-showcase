@@ -5,6 +5,7 @@ import { useState } from "react";
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
+  /** Intercepts the demo form submission and shows a confirmation state. */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -44,7 +45,7 @@ const ContactSection = () => {
             className="space-y-4"
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
-              I own features across React/Next.js, Flutter, and Node.js — real-time systems, Firebase, Stripe, and AI-assisted delivery. <strong className="text-foreground">Certified HIPAA Professional (CHP)</strong> valid through Feb 2028.
+              I own features across React/Next.js, Flutter, and Node.js — API integrations, real-time systems, Stripe billing, and AI-enabled workflows. I’m comfortable shipping in HIPAA-aware environments (PHI handling, least-privilege access, audit trails, encryption in transit/at rest).
             </p>
 
             <a
