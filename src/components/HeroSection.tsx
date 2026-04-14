@@ -3,11 +3,20 @@ import { ArrowRight, Sparkles, MapPin, Shield } from "lucide-react";
 
 const stats = [
   { num: "7+", label: "Years Experience", color: "from-violet to-indigo" },
-  { num: "15+", label: "Projects Shipped", color: "from-cyan to-emerald" },
-  { num: "5", label: "HealthTech Apps", color: "from-rose to-coral" },
+  { num: "5+", label: "Projects Shipped", color: "from-cyan to-emerald" },
+  { num: "4", label: "HealthTech Apps", color: "from-rose to-coral" },
 ];
 
 const techTags = [
+  { name: "LLMs (GPT-4/5, Claude)", color: "bg-rose/15 text-rose border-rose/25" },
+  { name: "RAG", color: "bg-amber/15 text-amber border-amber/25" },
+  { name: "LangGraph / LangChain", color: "bg-violet/15 text-violet border-violet/25" },
+  { name: "Voice Agents", color: "bg-cyan/15 text-cyan border-cyan/25" },
+  { name: "Twilio (Voice/SMS/WA)", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
+  { name: "Vector DBs (Pinecone/Qdrant)", color: "bg-indigo/15 text-indigo border-indigo/25" },
+  { name: "n8n / Zapier", color: "bg-emerald/15 text-emerald border-emerald/25" },
+  { name: "Webhooks / Event-driven", color: "bg-rose/15 text-rose border-rose/25" },
+  { name: "Stripe / PayPal", color: "bg-violet/15 text-violet border-violet/25" },
   { name: "React", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
   { name: "Next.js", color: "bg-violet/15 text-violet border-violet/25" },
   { name: "TypeScript", color: "bg-indigo/15 text-indigo border-indigo/25" },
@@ -18,15 +27,6 @@ const techTags = [
   { name: "PostgreSQL", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
   { name: "Socket.io", color: "bg-rose/15 text-rose border-rose/25" },
   { name: "AWS", color: "bg-amber/15 text-amber border-amber/25" },
-  { name: "LLMs (GPT-4/5, Claude)", color: "bg-rose/15 text-rose border-rose/25" },
-  { name: "RAG", color: "bg-amber/15 text-amber border-amber/25" },
-  { name: "LangGraph / LangChain", color: "bg-violet/15 text-violet border-violet/25" },
-  { name: "Voice Agents", color: "bg-cyan/15 text-cyan border-cyan/25" },
-  { name: "Twilio (Voice/SMS/WA)", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
-  { name: "Vector DBs (Pinecone/Qdrant)", color: "bg-indigo/15 text-indigo border-indigo/25" },
-  { name: "n8n / Zapier", color: "bg-emerald/15 text-emerald border-emerald/25" },
-  { name: "Webhooks / Event-driven", color: "bg-rose/15 text-rose border-rose/25" },
-  { name: "Stripe / PayPal", color: "bg-violet/15 text-violet border-violet/25" },
 ];
 
 const container = {

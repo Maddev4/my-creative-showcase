@@ -2,14 +2,78 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Send, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
+type ContactFormState = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState<ContactFormState>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  /** Intercepts the demo form submission and shows a confirmation state. */
-  const handleSubmit = (e: React.FormEvent) => {
+  /** Updates a single contact field while preserving the rest. */
+  const setField = (key: keyof ContactFormState, value: string) => {
+    setForm((prev) => ({ ...prev, [key]: value }));
+  };
+
+  /**
+   * Sends the contact form to a backend endpoint (recommended) and falls back to `mailto:` when not configured.
+   *
+   * Configure `VITE_CONTACT_ENDPOINT` (e.g. Formspree / Netlify Function / your API) to receive:
+   * `{ name, email, subject, message, source, userAgent, sentAt }`.
+   */
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    if (isSending) return;
+
+    setIsSending(true);
+    setError(null);
+    setSubmitted(false);
+
+    try {
+      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
+
+      if (endpoint && endpoint.trim().length > 0) {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...form,
+            source: "portfolio",
+            userAgent: navigator.userAgent,
+            sentAt: new Date().toISOString(),
+          }),
+        });
+
+        if (!res.ok) {
+          throw new Error(`Request failed (${res.status})`);
+        }
+      } else {
+        const to = "maddev049@gmail.com";
+        const subject = encodeURIComponent(form.subject || "Website contact");
+        const body = encodeURIComponent(
+          [`Name: ${form.name}`, `Email: ${form.email}`, "", form.message].join("\n")
+        );
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      }
+
+      setSubmitted(true);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch {
+      setError("Could not send your message. Please email me directly.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -49,7 +113,7 @@ const ContactSection = () => {
             </p>
 
             <a
-              href="mailto:be3830072@gmail.com"
+              href="mailto:maddev049@gmail.com"
               className="group flex items-center gap-4 p-5 bg-card border border-border rounded-2xl hover:border-violet/40 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet to-indigo flex items-center justify-center shadow-lg shadow-violet/20 group-hover:scale-110 transition-transform">
@@ -57,7 +121,7 @@ const ContactSection = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-xs text-muted-foreground mb-0.5">Email</div>
-                <div className="font-medium text-sm text-foreground truncate">be3830072@gmail.com</div>
+                <div className="font-medium text-sm text-foreground truncate">maddev049@gmail.com</div>
               </div>
               <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-violet transition-colors" />
             </a>
@@ -91,18 +155,24 @@ const ContactSection = () => {
               <div>
                 <label className="text-sm font-semibold text-foreground mb-2 block">Name</label>
                 <input
+                  name="name"
                   type="text"
                   placeholder="Your name"
                   required
+                  value={form.name}
+                  onChange={(e) => setField("name", e.target.value)}
                   className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20 bg-background text-foreground transition-all"
                 />
               </div>
               <div>
                 <label className="text-sm font-semibold text-foreground mb-2 block">Email</label>
                 <input
+                  name="email"
                   type="email"
                   placeholder="your@email.com"
                   required
+                  value={form.email}
+                  onChange={(e) => setField("email", e.target.value)}
                   className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20 bg-background text-foreground transition-all"
                 />
               </div>
@@ -110,21 +180,29 @@ const ContactSection = () => {
             <div>
               <label className="text-sm font-semibold text-foreground mb-2 block">Subject</label>
               <input
+                name="subject"
                 type="text"
                 placeholder="Project inquiry, collaboration..."
                 required
+                value={form.subject}
+                onChange={(e) => setField("subject", e.target.value)}
                 className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20 bg-background text-foreground transition-all"
               />
             </div>
             <div>
               <label className="text-sm font-semibold text-foreground mb-2 block">Message</label>
               <textarea
+                name="message"
                 placeholder="Tell me about your project..."
                 required
                 rows={4}
+                value={form.message}
+                onChange={(e) => setField("message", e.target.value)}
                 className="w-full px-4 py-3 border border-border rounded-xl text-sm focus:border-violet focus:outline-none focus:ring-2 focus:ring-violet/20 bg-background text-foreground transition-all resize-y"
               />
             </div>
+
+            {error && <p className="text-sm text-rose font-medium">{error}</p>}
 
             {submitted && (
               <motion.p
@@ -138,9 +216,10 @@ const ContactSection = () => {
 
             <button
               type="submit"
-              className="w-full group bg-gradient-to-r from-violet to-indigo text-primary-foreground py-3.5 rounded-xl font-bold text-sm hover:shadow-xl hover:shadow-violet/25 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+              disabled={isSending}
+              className="w-full group bg-gradient-to-r from-violet to-indigo text-primary-foreground py-3.5 rounded-xl font-bold text-sm hover:shadow-xl hover:shadow-violet/25 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              Send Message
+              {isSending ? "Sending..." : "Send Message"}
               <Send size={15} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.form>
