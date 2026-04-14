@@ -17,7 +17,7 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
   }),
 };
 
@@ -130,8 +130,8 @@ const HeroSection = () => (
           ))}
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-400 text-xs font-semibold px-3.5 py-1.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot" />
+        <div className="inline-flex items-center gap-2 bg-teal/15 border border-teal/30 text-teal-mid text-xs font-semibold px-3.5 py-1.5 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-teal-mid animate-pulse-dot" />
           Open to opportunities
         </div>
       </motion.div>
