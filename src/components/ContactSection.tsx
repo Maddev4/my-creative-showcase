@@ -73,7 +73,7 @@ const ContactSection = () => {
 
             <div className="p-5 bg-card border border-border rounded-2xl">
               <div className="text-xs text-muted-foreground mb-1">Rate</div>
-              <div className="font-heading font-bold text-2xl text-gradient">$30/hr</div>
+              <div className="font-heading font-bold text-2xl text-gradient">$30 - $35/hr</div>
               <div className="text-xs text-muted-foreground mt-1">Flexible monthly engagements</div>
             </div>
           </motion.div>
