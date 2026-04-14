@@ -11,6 +11,7 @@ const techTags = [
   { name: "React", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
   { name: "Next.js", color: "bg-violet/15 text-violet border-violet/25" },
   { name: "TypeScript", color: "bg-indigo/15 text-indigo border-indigo/25" },
+  { name: "React Native", color: "bg-brand-blue/15 text-brand-blue border-brand-blue/25" },
   { name: "Flutter", color: "bg-cyan/15 text-cyan border-cyan/25" },
   { name: "Node.js", color: "bg-emerald/15 text-emerald border-emerald/25" },
   { name: "Firebase", color: "bg-amber/15 text-amber border-amber/25" },
