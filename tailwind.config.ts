@@ -9,13 +9,14 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1100px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        heading: ['Space Grotesk', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ["Space Grotesk", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,13 +52,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        navy: "hsl(var(--navy))",
-        "navy-light": "hsl(var(--navy-light))",
-        teal: {
-          DEFAULT: "hsl(var(--teal))",
-          mid: "hsl(var(--teal-mid))",
-          glow: "hsl(var(--teal-glow))",
-          light: "hsl(var(--teal-light))",
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          light: "hsl(var(--violet-light))",
+        },
+        indigo: "hsl(var(--indigo))",
+        "brand-blue": "hsl(var(--blue))",
+        cyan: "hsl(var(--cyan))",
+        teal: "hsl(var(--teal))",
+        emerald: "hsl(var(--emerald))",
+        amber: "hsl(var(--amber))",
+        rose: "hsl(var(--rose))",
+        pink: "hsl(var(--pink))",
+        coral: "hsl(var(--coral))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          mid: "hsl(var(--navy-mid))",
+          light: "hsl(var(--navy-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -86,7 +97,7 @@ export default {
         },
         "pulse-dot": {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.5", transform: "scale(1.4)" },
+          "50%": { opacity: "0.5", transform: "scale(1.5)" },
         },
       },
       animation: {
