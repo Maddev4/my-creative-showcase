@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const skills = [
   { icon: "⚛️", name: "React / Next.js", level: "TypeScript, Ant Design, MUI", gradient: "from-brand-blue/20 to-violet/20", border: "hover:border-brand-blue/40" },
-  { icon: "📱", name: "Flutter", level: "Dart, GetX, Firebase, social auth", gradient: "from-cyan/20 to-brand-blue/20", border: "hover:border-cyan/40" },
+  { icon: "📱", name: "React Native / Flutter", level: "Dart, GetX, Firebase, social auth", gradient: "from-cyan/20 to-brand-blue/20", border: "hover:border-cyan/40" },
   { icon: "🟢", name: "Node.js / NestJS", level: "REST APIs, scalable backends", gradient: "from-emerald/20 to-teal/20", border: "hover:border-emerald/40" },
   { icon: "🔥", name: "Firebase", level: "Auth, Firestore, FCM, Storage", gradient: "from-amber/20 to-coral/20", border: "hover:border-amber/40" },
   { icon: "⚡", name: "Real-time", level: "WebSockets, Socket.io, live data", gradient: "from-violet/20 to-rose/20", border: "hover:border-violet/40" },
